@@ -1,11 +1,13 @@
-import { Component, NgZone } from '@angular/core';
-import { UportService } from 'src/uport/uport';
+import { Component } from '@angular/core';
+import { UportService } from 'src/uport';
 @Component({
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  name = "";
+  email = "";
   title = 'Persol DID Platform';
+
   constructor(private uport: UportService) { }
 
   clicked = false;
