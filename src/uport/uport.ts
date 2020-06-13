@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 // doc
 // https://github.com/uport-project/uport-connect/blob/develop/docs/reference/index.md#Connect+sendVerification
+// https://github.com/uport-project/uport-connect/issues/268
 
 // The request id to manage uport disclosure requests
 const DISCLOSURE_REQUEST = "@uport/DISCLOSURE_REQUEST";
