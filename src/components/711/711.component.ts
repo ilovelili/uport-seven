@@ -6,9 +6,9 @@ import { UportService } from 'src/uport';
   styleUrls: ['./711.component.scss']
 })
 export class P711Component {
-  private disclosure: string;
+  // private disclosure: string;
 
   constructor(uport: UportService) {
-    this.disclosure = uport.disclosure;
+    // this.disclosure = uport.disclosure;
   }
 }
