@@ -49,6 +49,8 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.20.0",
-    "typescript": "~3.7.5"
+    "typescript": "~3.7.5",
+    "crypto-browserify": "~3.12.0",
+    "@babel/compat-data": "~7.8.0"
   }
 }

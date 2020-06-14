@@ -1,5 +1,23 @@
 <div class="container">
-  <h2>
-    711 service need to know your persol ID
-  </h2>
+
+  <pre class="card card-block card-header" *ngIf="title">{{title}}</pre>
+
+  <h3 class="card card-block card-header">アルバイト時間帯選んでください</h3>
+  <div class="btn-group" btnRadioGroup [(ngModel)]="reservedTime">
+    <label *ngFor="let time of timeSlots; let i = index" class="btn" style="margin-left: 10px;"
+      [ngClass]="{'btn-success':i%3==0,'btn-info':i%3==1,'btn-warning':i%3==2}" [btnRadio]="time"
+      role="button">{{time}}</label>
+  </div>
+
+  <h3 class="card card-block card-header" style="margin-top: 30px;">店舗を選んでください</h3>
+  <div class="btn-group" btnRadioGroup [(ngModel)]="reservedShop">
+    <label *ngFor="let shop of shops; let i = index" class="btn" style="margin-left: 10px;"
+      [ngClass]="{'btn-success':i%4==1,'btn-info':i%4==2,'btn-warning':i%4==3, 'btn-danger':i%4==0}" [btnRadio]="shop"
+      role="button">{{shop}}</label>
+  </div>
+
+  <div style="margin-top: 30px;">
+    <button type="button" (click)="submit()" class="btn btn-primary btn-ladda" data-style="zoom-in"
+      [ladda]="clicked">OK</button>
+  </div>
 </div>

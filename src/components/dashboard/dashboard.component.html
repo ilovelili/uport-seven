@@ -1,14 +1,20 @@
 <div class="container">
-  <h2>
-    Select the service you want to connect
-  </h2>
-
-  <ul class="list-group">
-    <li class="list-group-item">
-      <a type="button" [routerLink]="['/711']" class="btn btn-success">711</a>
-    </li>
-    <li class="list-group-item" tooltip="not ready">
-      <a type="button" class="btn btn-secondary" disabled>Nitori</a>
-    </li>
-  </ul>
+  <div class="card">
+    <div class="card-header">
+      <h2>
+        Select the service you want to connect
+      </h2>
+    </div>
+    <div class="card-body">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <button type="button" (click)="requestPersolID()" class="btn btn-success btn-ladda" data-style="zoom-in"
+            [ladda]="clicked">711</button>
+        </li>
+        <li class="list-group-item" tooltip="not ready">
+          <button type="button" class="btn btn-secondary" disabled>Nitori</button>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

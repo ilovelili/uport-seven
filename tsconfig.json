@@ -17,5 +17,8 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
+  },
+  "paths": {
+    "crypto": ["../node_modules/crypto-browserify/index.js"]
   }
 }

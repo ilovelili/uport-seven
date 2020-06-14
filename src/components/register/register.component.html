@@ -1,20 +1,27 @@
 <div class="container">
-  <h2>Your user information</h2>
-
-  <form class="form" #f="ngForm" (ngSubmit)="register()">
-    <div class="form-group row">
-      <label class="col-form-label col-3" attr.for="name">Name</label>
-      <input type="text" name="name" class="form-control col-9" [(ngModel)]="name" required placeholder="name" />
+  <h2>Your have logged in</h2>
+  <div class="card">
+    <div class="card-header">
+      <img [src]="avatar.uri" width="100" />
     </div>
+    <div class="card-body">
+      <form class="form" #f="ngForm" (ngSubmit)="register()">
+        <div class="form-group row">
+          <label class="col-form-label col-3" attr.for="name">Name</label>
+          <input type="text" name="name" class="form-control col-6" [(ngModel)]="name" required placeholder="name" />
+        </div>
 
-    <div class="form-group row">
-      <label class="col-form-label col-3" attr.for="email">Email</label>
-      <input type="text" name="email" class="form-control col-9" [(ngModel)]="email" required placeholder="email" />
+        <div class="form-group row">
+          <label class="col-form-label col-3" attr.for="email">Email</label>
+          <input type="text" name="email" class="form-control col-6" [(ngModel)]="email" required placeholder="email" />
+        </div>
+
+        <button type="submit" [disabled]="!f.form.valid" data-style="zoom-in" [ladda]="clicked"
+          class="btn btn-primary btn-ladda">Register</button>
+
+        <a type="button" [routerLink]="['/dashboard']" class="btn btn-info" style="margin-left: 20px">
+          Connect To Services</a>
+      </form>
     </div>
-
-    <button type="submit" [disabled]="!f.form.valid" data-style="zoom-in" [ladda]="clicked"
-      class="btn btn-primary btn-ladda" *ngIf="!clicked">Register</button>
-
-    <a type="button" [routerLink]="dashboard" class="btn btn-info" *ngIf="clicked">Connect To Services</a>
-  </form>
+  </div>
 </div>
