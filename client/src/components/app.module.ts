@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LaddaModule } from 'angular2-ladda';
-import { LocationStrategy, PathLocationStrategy, CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -13,7 +13,10 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { P711Component } from './711/711.component';
 import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ShopComponent } from './shop/shop.component';
+import { LoginClient } from 'src/clients';
+import { HttpClientModule } from '@angular/common/http';
+import { DataTableModule } from 'angular2-datatable';
 
 @NgModule({
   declarations: [
@@ -22,8 +25,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DashboardComponent,
     RegisterComponent,
     P711Component,
+    ShopComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserAnimationsModule,
     CommonModule,
     FormsModule,
@@ -32,12 +37,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     LaddaModule,
     ButtonsModule,
+    DataTableModule,
     TooltipModule.forRoot(),
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: PathLocationStrategy,
-  }],
+  providers: [
+    LoginClient,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

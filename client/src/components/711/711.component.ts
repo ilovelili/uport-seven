@@ -43,6 +43,7 @@ export class P711Component {
     }
 
     this.uport.sendVerification("SevenEleven", 60 * 60 * 24 * 7, {
+      time: new Date().toISOString(),
       name: state.name,
       email: state.email,
       persolId: state["Persol ID"].id,

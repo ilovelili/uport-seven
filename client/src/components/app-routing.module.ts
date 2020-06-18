@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { P711Component } from './711/711.component';
 import { RegisterComponent } from './register/register.component';
+import { ShopComponent } from './shop/shop.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: '711',
     component: P711Component,
+  },
+  {
+    path: 'shop',
+    component: ShopComponent,
   },
   {
     path: '**',

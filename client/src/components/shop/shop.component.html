@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>7側管理画面</h2>
+  <div><img [src]="sanitize(qr)" *ngIf="qr" /></div>
+
+  <table class="table table-striped" #mf="mfDataTable" [mfData]="info" [mfRowsOnPage]="10">
+    <thead>
+      <tr>
+        <th style="width: 20%">DID</th>
+        <th style="width: 10%">名前</th>
+        <th style="width: 20%">メールアドレス</th>
+        <th style="width: 10%">Persol ID</th>
+        <th style="width: 20%">予約時刻</th>
+        <th style="width: 20%">予約店</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of mf.data">
+        <td>{{item.did}}</td>
+        <td>{{item.SevenEleven.name}}</td>
+        <td>{{item.SevenEleven.email}}</td>
+        <td>{{item.SevenEleven.persolId}}</td>
+        <td>{{item.SevenEleven.reservedTime}}</td>
+        <td>{{item.SevenEleven.reservedShop}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6">
+          <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15,30]"></mfBootstrapPaginator>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

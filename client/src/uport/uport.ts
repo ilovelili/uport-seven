@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 // The request id to manage uport disclosure requests
 export const LOGIN_DISCLOSURE_REQUEST = "@uport/LOGIN_DISCLOSURE_REQUEST";
 export const PERSOLID_DISCLOSURE_REQUEST = "@uport/PERSOLID_DISCLOSURE_REQUEST";
+export const SEVEN_DISCLOSURE_REQUEST = "@uport/SEVEN_DISCLOSURE_REQUEST";
 export const SEND_VERIFICATION_REQUEST = "@uport/SEND_VERIFICATION_REQUEST";
 export const DISCLOSURE_RECEIVED = '@uport/DISCLOSURE_RECEIVED'
 export const SEND_VERIFICATION_RECEIVED = "@uport/SEND_VERIFICATION_RECEIVED";
@@ -32,6 +33,11 @@ export class UportService {
 
     uport.onResponse(SEND_VERIFICATION_REQUEST).then((res) => {
       console.log(res);
+    });
+
+    uport.onResponse(SEVEN_DISCLOSURE_REQUEST).then(res => {
+      console.log(res);
+      window.location.href = `${window.location.origin}/shop`;
     });
   }
 
